@@ -1,0 +1,42 @@
+ <!--<nav class="navbar navbar-expand-md navbar-dark bg-dark">-->
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+        <div class="w-25 mr-auto order-1">
+          <!--<a class="navbar-brand" href="/"><img src="" width="138" height="55"></img></a>-->
+        </div>
+    
+        <button class="navbar-toggler order-3" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+        <div class="mx-auto w-50 order-2">
+            <h3 id="slogan" class="mx-auto"><!--Health Tracker--></h3>
+        </div>
+        <div class="navbar-collapse collapse order-3 w-25 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <!--
+                <li class="nav-item">
+                    <a class="nav-link" href=".">Etusivu</a>
+                </li>
+                -->
+                <% if (logged_user) { %>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/auth/logout">Log out    </a>
+                </li>
+
+                <li class="nav-item navbar-text text-warning">
+                    User: <%= logged_user %>
+                </li>
+
+                <% } else { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/auth/login">Login</a>
+                    </li>
+                <% } %>
+            </ul>
+    
+        </div>
+    </nav>
+    
+    </header>
+  

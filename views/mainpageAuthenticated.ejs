@@ -1,0 +1,52 @@
+<%- include('partials/inc_header.ejs') %>
+<%- include('partials/inc_navi.ejs') %>
+<%- include('partials/inc_form_start.ejs') %>
+
+<div class="form-sub-main mk-width-700">
+        <h1>HealthTracker</h1>
+        <p>How to use HealthTracker:
+        With the 'Report!' button you can report your daily statistics.
+        After reporting, use 'Summary' to view your statistics from any given week or month.
+        </p>
+        <div class="form-group">
+            <div class="btn_uy">
+            <a href="/behaviour/reporting"><span>Report</span></a>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="btn_uy">
+            <a href="/summary"><span>Summary</span></a>
+            </div>
+        </div>
+        <div class="data-div">
+            <table class="data-table">
+                <tr>
+                    <td class="td-right">
+                        <p>Our users average mood today: </p>
+                    </td>
+                    <td class="td-left">
+                        <p><strong>&nbsp&nbsp<%= averageMoodToday %></strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td  class="td-right">
+                        <p>Our users average mood yesterday: </p>
+                    </td>
+                    <td class="td-left">
+                        <p><strong>&nbsp&nbsp<%= averageMoodYesterday %></strong></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <% if (averageMoodToday > averageMoodYesterday) { %>
+            <h3 class="hw">Things are looking bright today!</h3>
+        <% } else if (averageMoodToday < averageMoodYesterday) { %>
+            <h3 class="hw">Things are looking gloomy today...</h3>
+        <% } %>
+
+</div>
+
+<%- include('partials/inc_form_end.ejs') %>
+
+<%- include('partials/inc_footer.ejs') %>

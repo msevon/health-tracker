@@ -1,0 +1,39 @@
+<%- include('partials/inc_header.ejs') %>
+<%- include('partials/inc_navi.ejs') %>
+<%- include('partials/inc_form_start.ejs') %>
+<div class="form-sub-main">
+<h1>Reports</h1>
+
+<div class="form-group">
+    <div class="btn_uy">
+    <a href="/behaviour/reporting/morning"><span>Report your morning!</span></a>
+    </div>
+</div>
+
+
+<% if (morning == true) { %>
+    <p>You have already reported statistics for the morning today. You can still report statistics for an another morning if you want to.</p>
+<% } %>
+
+<div class="form-group">
+    <div class="btn_uy">
+    <a href="/behaviour/reporting/evening"><span>Report your evening!</span></a>
+    </div>
+</div>
+
+<% if (evening == true) { %>
+    <p>You have already reported statistics for the evening today. You can still report statistics for an another evening if you want to.</p>
+<% } %>
+
+
+<div class="form-group">
+    <div class="btn_uy">
+    <a href="/"><span>Back to main page</span></a>
+    </div>
+</div>
+
+</div>
+
+<%- include('partials/inc_form_end.ejs') %>
+
+<%- include('partials/inc_footer.ejs') %>

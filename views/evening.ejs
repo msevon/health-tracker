@@ -1,0 +1,48 @@
+<%- include('partials/inc_header.ejs') %>
+<%- include('partials/inc_navi.ejs') %>
+<%- include('partials/inc_form_start.ejs') %>
+
+
+<div class="form-sub-main">
+<form method="POST" action="/behaviour/reporting/evening/post">
+    <label>
+
+      <div class="form-group row text-info>
+        <label for="example-date-input" class="form-control-label">Date</label>
+        <div class="col-10">
+          <input class="form-control" name="day" type="date" value="<%= date %>" id="example-date-input">
+        </div>
+
+        <div class="form-group form-inline">
+          <input type="number" class="form-control" name="exerciseTime" id="exerciseTime" aria-describedby="exerciseTimeHelp" min="0" placeholder="Exercising time in hours">
+        </div>
+
+        <div class="form-group form-inline">
+          <input type="number" class="form-control" name="studyingTime" id="studyingTime" aria-describedby="studyingTimeHelp" min="0" placeholder="Studying time in hours">
+        </div>
+
+        <label for="rangeInput2" class="form-control-label">Regularity of eating:</label>
+        <input id="rangeInput1" type="range" name="reqularityOfEating" min="1" max="5" value="1" oninput="amount1.value=rangeInput1.value"/>
+        <output id="amount1" name="amount" for="rangeInput2">1</output>
+
+        <label for="rangeInput2" class="form-control-label">Quality of eating:</label>
+        <input id="rangeInput2" type="range" name="qualityOfEating" min="1" max="5" value="1" oninput="amount2.value=rangeInput2.value"/>
+        <output id="amount2" name="amount" for="rangeInput2">1</output>
+
+        <label for="rangeInput2" class="form-control-label">Generic mood:</label>
+        <input id="rangeInput3" type="range" name="GenericMood" min="1" max="5" value="1" oninput="amount3.value=rangeInput3.value"/>
+        <output id="amount3" name="amount" for="rangeInput2">1</output>
+
+        <button type="submit" class="btn btn-primary">Report!</button>
+
+        <%- include('partials/inc_errors.ejs') %>
+
+        <%- include('partials/inc_backToReportPage.ejs') %>
+  </label>
+</form>
+
+</div>
+
+<%- include('partials/inc_form_end.ejs') %>
+
+<%- include('partials/inc_footer.ejs') %>
