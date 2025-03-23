@@ -1,9 +1,3 @@
-MIKU SEVÓN
-
-
-Online location of application:
-
-http://hakopirtti.ddns.net:100/
 
 
 How to run the application locally:
